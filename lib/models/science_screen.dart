@@ -1,0 +1,14 @@
+import 'package:flutter/material.dart';
+
+class ScienceScreen extends StatelessWidget {
+  const ScienceScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        Text('Science Screen'),
+      ],
+    );
+  }
+}
