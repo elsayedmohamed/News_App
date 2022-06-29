@@ -29,6 +29,12 @@ class NewsLayout extends StatelessWidget {
               cubit.changeBottomNavBar(index: index);
             },
           ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              cubit.getBusiness();
+            },
+            child: Icon(Icons.add),
+          ),
         );
       },
     );
