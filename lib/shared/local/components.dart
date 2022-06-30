@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-Widget buildArticleItem(article) => Card(
-      shape: OutlineInputBorder(),
+Widget buildArticleItem(Map article) => Card(
+      shape: const OutlineInputBorder(),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(
