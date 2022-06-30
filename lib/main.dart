@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.blue,
             ),
             darkTheme: ThemeData(
-              bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                 selectedItemColor: Colors.white,
                 unselectedItemColor: Colors.grey,
               ),
@@ -59,12 +59,13 @@ class MyApp extends StatelessWidget {
                 color: HexColor('#6b6863'),
               ),
               canvasColor: HexColor('#6b6863'),
-              textTheme: TextTheme(
+              textTheme: const TextTheme(
                   headline3: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               )).copyWith(
-                  bodyMedium: TextStyle(color: Colors.white, fontSize: 15.0)),
+                  bodyMedium:
+                      const TextStyle(color: Colors.white, fontSize: 15.0)),
               primarySwatch: Colors.blue,
             ),
             themeMode: NewsAppCubit.get(context).isDark
