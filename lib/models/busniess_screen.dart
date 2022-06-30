@@ -1,3 +1,4 @@
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/cubit/cubit.dart';
@@ -16,13 +17,17 @@ class BusinessScreen extends StatelessWidget {
       },
       builder: (context, state) {
         var list = NewsAppCubit.get(context).business;
-        return ListView.separated(
-            itemBuilder: (context, index) => buildArticleItem(list[index]),
-            separatorBuilder: (context, index) => Container(
-                  height: 1.0,
-                  color: Colors.grey[400],
-                ),
-            itemCount: list.length);
+        return ConditionalBuilder(
+            condition: list.isNotEmpty,
+            builder: (context) => ListView.separated(
+                itemBuilder: (context, index) => buildArticleItem(list[index]),
+                separatorBuilder: (context, index) => Container(
+                      height: 1.0,
+                      color: Colors.grey[400],
+                    ),
+                itemCount: list.length),
+            fallback: (context) =>
+                const Center(child: CircularProgressIndicator()));
       },
     );
   }

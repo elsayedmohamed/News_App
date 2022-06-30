@@ -18,7 +18,16 @@ class NewsLayout extends StatelessWidget {
           appBar: AppBar(
             title: Text(cubit.titles[cubit.currentIndex]),
             actions: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.search))
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.search),
+              ),
+              IconButton(
+                onPressed: () {
+                  NewsAppCubit.get(context).changeAppThemeMode();
+                },
+                icon: const Icon(Icons.brightness_4_outlined),
+              ),
             ],
           ),
           body: cubit.screens[cubit.currentIndex],
@@ -28,12 +37,6 @@ class NewsLayout extends StatelessWidget {
             onTap: (index) {
               cubit.changeBottomNavBar(index: index);
             },
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              cubit.getBusiness();
-            },
-            child: Icon(Icons.add),
           ),
         );
       },
