@@ -20,7 +20,8 @@ class BusinessScreen extends StatelessWidget {
         return ConditionalBuilder(
             condition: list.isNotEmpty,
             builder: (context) => ListView.separated(
-                itemBuilder: (context, index) => buildArticleItem(list[index]),
+                itemBuilder: (context, index) =>
+                    buildArticleItem(list[index], context),
                 separatorBuilder: (context, index) => Container(
                       height: 1.0,
                       color: Colors.grey[400],
